@@ -1,0 +1,199 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin: 0 auto;
+    padding: 30px;
+    color: white;
+    background-color: orange;
+    text-align: center;
+}
+
+header div ul {
+    list-style: none;
+}
+
+header div li {
+    /* 横並びにできた 　flexだと真ん中にできなかった*/
+    display: inline;
+}
+
+header ul a {
+    text-decoration: none;
+    color: white;
+    padding: 0 20px 0;
+    margin: 0 auto;
+}
+
+
+main section img {
+    width: 100%;
+    height: 800px;
+    /* 綺麗に範囲内で拡大される */
+    object-fit: cover;
+    /* object-position: center; */
+}
+
+main section div {
+    background-color: rgb(255, 94, 0);
+    border-radius: 20px;
+    width: 550px;
+    padding: 50px 10px 50px;
+    margin: 0 auto;
+
+    text-align: center;
+
+    /* 相対的な位置決め */
+    position: relative;
+    /* 上に400px */
+    top: -400px;
+
+    /* positionで移動させた分の空白を埋める */
+    margin-bottom: -170px;
+}
+
+main section h2 {
+    /* divのtext-align: center;ありきで左揃え中央 */
+    text-align: left;
+    display: inline-block;
+    font-size: 36px;
+    color: white;
+}
+
+main div h2 span {
+    color: rgb(250, 250, 96);
+}
+
+
+main article {
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px;
+
+    justify-content: center;
+}
+
+.menu {
+    padding: 10px 25px;
+
+    width: calc((100% - 2px)/2);
+}
+
+/* 写真はみ出る ・・・・・・・・・・・・*/
+.cook-img {
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+
+    /* 範囲確認用 */
+    /* background-color: pink; */
+}
+
+.cook-img img {
+    width: 100%;
+    /* ← これが重要 */
+    height: 100%;
+    /* ← トリミングして収める */
+    object-fit: cover;
+    /* ← 中央を基準に表示 */
+    object-position: center;
+}
+
+main article img:hover {
+    transform: scale(1.2);
+}
+
+
+main article h2 {
+    padding: 10px 0 20px;
+}
+
+.cook-Exp {
+    padding-bottom: 15px;
+}
+
+.menu div {
+    padding: 20px 0;
+}
+
+.menu .en {
+    color: rgb(146, 144, 144);
+}
+
+.discount {
+    color: red;
+    font-size: 25px;
+}
+
+
+.btn {
+    display: inline-block;
+    background: black;
+    border: 1px solid black;
+    color: white;
+    width: 150px;
+    text-align: center;
+    padding: 8px 20px;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background: white;
+    color: black;
+}
+
+footer {
+    background-color: orange;
+    padding: 10px;
+}
+
+footer p {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+}
+
+
+
+@media(max-width:800px) {
+
+    main section img {
+        height: 400px;
+    }
+
+    main section div {
+        width: 300px;
+
+        /* 上に250px */
+        top: -250px;
+
+        /* positionで移動させた分の空白を埋める */
+        margin-bottom: -130px;
+    }
+
+    main section h2 {
+        font-size: 20px;
+    }
+
+    main article {
+        display: block;
+        /* justify-content: center; */
+    }
+
+    main article .menu {
+        width: 100%;
+        padding: 20px 40px;
+    }
+
+    main article .cook-img {
+        height: 500px;
+    }
+}
